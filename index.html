@@ -35,7 +35,7 @@
 
     <div class="container">
       <!-- Example row of columns -->
-      <!--<div class="row">-->
+      <div class="row">
         <table class="table" id="content">
           <tr class="title">
             <th>類別</th>
@@ -46,7 +46,7 @@
             <th>緯度</th>
           </tr>
         </table>
-      <!--</div>-->
+      </div>
       <div class="cssload-wrap">
         <div class="cssload-circle"></div>
         <div class="cssload-circle"></div>
@@ -96,9 +96,10 @@
             console.log(err);
         } else {
             var FreeSpotList = data.result.results;
-            var HTMLSpotList = FreeSpotList.map(function(FreeSpotList) {
-                var HTMLString = '<tr></td><td data-th="Area">' + FreeSpotList.AREA + '</td><td data-th="Name">' + FreeSpotList.HOTSPOT_NAME + '</td><td data-th="Type">' + FreeSpotList.HOTSPOT_TYPE + '</td><td data-th="Address">' + FreeSpotList.ADDRESS + '</td><td data-th="LNG">' + FreeSpotList.LNG + '</td><td data-th="LAT">' + FreeSpotList.LAT + '</td></tr>';
+            var HTMLSpotList = FreeSpotList.map(function(wifi) {
+                var HTMLString = '<tr><td data-th="Area">' + FreeSpotList.AREA + '</td><td data-th="Name">' + FreeSpotList.HOTSPOT_NAME + '</td><td data-th="Type">' + FreeSpotList.HOTSPOT_TYPE + '</td><td data-th="Address">' + FreeSpotList.ADDRESS + '</td><td data-th="LNG">' + FreeSpotList.LNG + '</td><td data-th="LAT">' + FreeSpotList.LAT + '</td></tr>';
                 var items = "";
+
                 var HTMLString = HTMLString + items + "</ul></p><div>";
                 return HTMLString;
             });
