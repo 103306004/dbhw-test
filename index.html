@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/lodash/4.6.1/lodash.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./loader.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./main.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <img src = "http://www.lisbonapartments.com/lisbon/wp-content/uploads/2009/10/free-wifi.jpg" alt="WIFI" style="float:left;width:88px;height:50px;">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">臺北市公眾區免費無線上網熱點資料</a>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <br>
+        <br>
+        <h1 style="color:red;">Taipei Free WiFi Spot</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <table class="table" id="content">
+          <tr class="title">
+            <th>類別</th>
+            <th>熱點名稱</th>
+            <th>熱點類別</th>
+            <th>地址</th>
+            <th>經度</th>
+            <th>緯度</th>
+          </tr>
+        </table>
+      </div>
+      <div class="cssload-wrap">
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+      </div>
+    </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2016 NCCU MIS - 103306004 彭頊凱</p>
+      </footer>
+    </div> <!-- /container -->
+
+  </body>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      getData(function(err, data) {
+        if (err) {
+            console.log(err);
+        } else {
+            var FreeSpotList = data.result.results;
+            var HTMLSpotList = FreeSpotList.map(function(FreeSpotList) {
+                var HTMLString = '<tr></td><td data-th="Area">' + FreeSpotList.AREA + '</td><td data-th="Name">' + FreeSpotList.HOTSPOT_NAME + '</td><td data-th="Type">' + FreeSpotList.HOTSPOT_TYPE + '</td><td data-th="Address">' + FreeSpotList.ADDRESS + '</td><td data-th="LNG">' + FreeSpotList.LNG + '</td><td data-th="LAT">' + FreeSpotList.LAT + '</td></tr>';
+                var items = "";
+                var HTMLString = HTMLString + items + "</ul></p><div>";
+                return HTMLString;
+            });
+            HTMLSpotList.forEach(function(html) {
+                $(html).appendTo("#content");
+            });
+ 
+            $('.cssload-wrap').css('display', 'none');
+        }
+      });
+    });
+  </script>
+</html>
+Status API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Contact Help
