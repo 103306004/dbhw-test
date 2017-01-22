@@ -1,13 +1,13 @@
 REM DISCID 38051B04
 REM COMMENT "ExactAudioCopy v0.95b3"
 PERFORMER "BON-BON BLANCO"
-TITLE "BON VOYAGE!(ÇëÇïÇÐÆãÇµ’[¬`¡PÇ´ÇßÇ­Ç¿ÇÄ)"
+TITLE "BON VOYAGE!(è¯·ç§‹åˆ‡æ²å ‘æŠ‚ç¡î“–è°´æ²é»”å¼ºæ‚„)"
 FILE "CDImage.ape" WAVE
   TRACK 01 AUDIO
     TITLE "Bon Voyage!"
     INDEX 01 00:00:00
   TRACK 02 AUDIO
-    TITLE "ÆèÇqÆòÇOÆìI Love you,yet"
+    TITLE "ç•¦èŽ™ä¹žè—æ——I Love you,yet"
     INDEX 00 04:29:17
     INDEX 01 04:31:55
   TRACK 03 AUDIO
